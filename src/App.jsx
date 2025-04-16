@@ -3,7 +3,7 @@ import { GameImage } from "./components/GameImage/GameImage.jsx";
 import { GuessDisplay } from "./components/GuessDisplay/GuessDisplay.jsx";
 import words from "./constants/words.js";
 import images from "./constants/images.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 const shuffled = (word) => {
@@ -58,6 +58,10 @@ function App() {
       }
     }
   };
+
+  useEffect(() => {
+    startGame();
+  }, []);
 
   return (
     <>
